@@ -27,5 +27,5 @@ notas <- function(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t){
   cat("A Media das 50% menores notas é:", menores_notas_media, "|")
   cat("A Media das 50% maiores notas é:", maiores_notas_media)
 }
-#testando
+#testandod
 notas(8,7,6,7,8,6,8,9,7,5,4,7,9,10,4,5,7,4,5,6)

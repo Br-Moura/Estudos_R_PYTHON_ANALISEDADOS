@@ -36,3 +36,17 @@ JOIN Clientes C ON V.ID_CLIENTE = C.ID_Clientes
 JOIN Produtos P ON V.ID_PRODUTO = P.ID_Produtos
 GROUP BY P.nome_Produtos, YEAR(V.data_Vendas), MONTH(V.data_Vendas)
 ORDER BY Produto, ano DESC, mes DESC;
+
+
+
+SELECT 
+    YEAR(V.data_Vendas) AS ano,
+    MONTH(V.data_Vendas) AS mes,
+	FORMAT(CAST(SUM(P.preco_Produto * V.quantidade_Vendas) AS REAL), 'C', 'pt-BR') AS total_ganho
+FROM Vendas V
+JOIN Clientes C ON V.ID_CLIENTE = C.ID_Clientes
+JOIN Produtos P ON V.ID_PRODUTO = P.ID_Produtos
+WHERE YEAR(V.data_Vendas) = 2024
+GROUP BY YEAR(V.data_Vendas), MONTH(V.data_Vendas)
+ORDER BY ano DESC, mes DESC
+;
